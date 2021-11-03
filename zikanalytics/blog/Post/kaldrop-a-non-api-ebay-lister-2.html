@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.zikanalytics.com/blog/post/kaldrop-a-non-api-ebay-lister by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Oct 2021 07:38:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="KalDrop is a Non API eBay lister that integrates with your chrome browser to help you upload any item on eBay">
+        <meta name="keywords" content="">
+    <meta property="article:section" content="Blog" />
+    <meta name="author" content="Nahar Geva" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="KalDrop is a Non API eBay lister that integrates with your chrome browser to help you upload any item on eBay" />
+    <meta name="twitter:title" content="All There Is To Know About KalDrop –A Non API eBay Lister" />
+    <meta name="twitter:image" content="../../BlogPhotos/2048%d1%851012(3).pngbcc02e8b-3977-4f8b-a5f2-cd78da2527e7.jpg" />
+    <meta property="og:url" content="kaldrop-a-non-api-ebay-lister.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="All There Is To Know About KalDrop –A Non API eBay Lister" />
+    <meta property="og:description" content="KalDrop is a Non API eBay lister that integrates with your chrome browser to help you upload any item on eBay" />
+    <meta property="og:image" content="../../BlogPhotos/2048%d1%851012(3).pngbcc02e8b-3977-4f8b-a5f2-cd78da2527e7.jpg" />
+    <meta property="og:site_name" content="ZikAnalytics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="canonical" href="kaldrop-a-non-api-ebay-lister.html" />
+
+    <link rel="stylesheet" type="text/css" href="../../siteContent/frontpage/css/home03f0.css?v=281" media="all">
+    <link rel="stylesheet" type="text/css" href="../../siteContent/frontpage/css/blog4cc8.css?v=28" media="all">
+    <link href="../../Content/vendors/fontawesome5/css/all.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../siteContent/frontpage/css/bootstrap.min.css" media="all">
+    <script type="text/javascript" src="../../siteContent/frontpage/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../siteContent/frontpage/js/bootstrap.min.js"></script>
+    <script src="../../siteContent/frontpage/js/blog.js"></script>
+
+        <title>All There Is To Know About KalDrop –A Non API eBay Lister</title>
+
+    <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-K3QMPNS');
+        </script>
+    <!-- End Google Tag Manager -->
+    <style>
+
+        #siteWrapper {
+            overflow-x: unset !important;
+        }
+
+        .navBarWrap {
+            padding: 0;
+            position: relative;
+        }
+
+        .navBar {
+            padding: 15px;
+        }
+
+        .table-wrapContent img {
+            float: left;
+            margin-right: 25px;
+            max-width: 50px !important;
+        }
+
+        .guideSubMessage {
+            position: fixed;
+            max-width: 400px;
+            border-radius: 8px;
+            right: 28px;
+            bottom: 20%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 1px 10px -2px rgba(0,0,0, .19);
+            transform: translateX(150%);
+            transition: all 250ms ease;
+            will-change: transform;
+            z-index: 50;
+        }
+
+        .activeMessage {
+            transform: translateX(0);
+        }
+
+        .guideSubMessage p {
+            margin: 30px 0;
+            text-align: center;
+            color: #012c41;
+        }
+
+
+        .navLink a {
+            color: #012c41;
+            text-decoration: none !important;
+        }
+
+            .navLink a.registerLink {
+                color: #FF404E;
+            }
+
+                .navLink a.registerLink:hover {
+                    color: #FFF;
+                }
+
+
+        .singlePostDescription {
+            font-family: mtsRegular;
+        }
+
+            .singlePostDescription p {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .singlePostDescription h1 {
+                font-size: 36px;
+            }
+
+            .singlePostDescription h2 {
+                font-size: 30px;
+            }
+
+            .singlePostDescription h3 {
+                font-size: 26px;
+            }
+
+            .singlePostDescription h4 {
+                font-size: 22px;
+            }
+
+            .singlePostDescription b {
+                font-family: mtsSemiBold;
+            }
+
+        @media(max-width: 767px) {
+            .table-wrapContent {
+                text-align: center;
+            }
+
+                .table-wrapContent img {
+                    float: none;
+                    display: block;
+                    margin: 15px auto;
+                }
+        }
+    </style>
+    <!-- Start of Sleeknote signup and lead generation tool - www.sleeknote.com -->
+        <script id='sleeknoteScript' type='text/javascript'>
+            (function () {
+                var sleeknoteScriptTag = document.createElement('script');
+                sleeknoteScriptTag.type = 'text/javascript';
+                sleeknoteScriptTag.charset = 'utf-8';
+                sleeknoteScriptTag.src = ('../../../sleeknotecustomerscripts.sleeknote.com/23877.js');
+                var s = document.getElementById('sleeknoteScript');
+                s.parentNode.insertBefore(sleeknoteScriptTag, s);
+            })();
+        </script>
+
+    <!-- End of Sleeknote signup and lead generation tool - www.sleeknote.com -->
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+    <div class="guideSubMessage">
+        <p>Thanks for subscribing!<br /> Keep your eyes peeled on your inbox for our next newsletter  😊</p>
+    </div>
+    <!-- Additionally, paste this code immediately after the opening <body> tag: -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3QMPNS"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="smMenu">
+        <div class="smLogo">
+            <div class="menuClose">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 16px;" fill="#012c41;">
+                    <path d="M505.943 6.058c-8.077-8.077-21.172-8.077-29.249 0L6.058 476.693c-8.077 8.077-8.077 21.172 0 29.249 4.038 4.04 9.332 6.058 14.625 6.058 5.293 0 10.586-2.019 14.625-6.059L505.943 35.306c8.076-8.076 8.076-21.171 0-29.248z" />
+                    <path d="M505.942 476.694L35.306 6.059c-8.076-8.077-21.172-8.077-29.248 0-8.077 8.076-8.077 21.171 0 29.248l470.636 470.636c4.038 4.039 9.332 6.058 14.625 6.058 5.293 0 10.587-2.019 14.624-6.057 8.075-8.078 8.075-21.173-.001-29.25z" />
+                </svg>
+            </div>
+        </div>
+        <ul class="smLinks">
+            <li class="smLink"><a href="../../index.html">Home</a></li>
+            <li class="smLink dropdownBtn">
+                <a href="#">Products</a>
+                <div class="zikDropdown">
+                    <a href="../../Home/EbayMarketResearch.html">eBay Market Research</a>
+                    <a href="../../Home/AliExpressMarketResearch.html">Ali Express Market Research</a>
+                    <a href="../../Home/zikProTools.html">ZIK Pro Tools</a>
+                    <a href="../../Home/Wholesale.html">Wholesale products database</a>
+                    <a href="https://zikfunnel.com/">ZIK Funnel</a>
+                </div>
+            </li>
+            <li class="smLink"><a class="scrollLink" href="#sectionReviews">Testimonials</a></li>
+            <li class="smLink"><a href="../../Home/Pricing/index.html">Pricing</a></li>
+            <li class="smLink"><a href="../index.html">Blog</a></li>
+        </ul>
+
+        <ul class="logReg">
+            <li class="navLink"><a class="loginLink" href="../../User/Login.html">Login</a></li>
+            <li class="navLink" style="margin: 0;"><a style="color: #FF404E !important;" class="registerLink" href="../../Plans.html">Get Started</a></li>
+        </ul>
+    </div>
+
+    <div id="siteWrapper">
+
+        <nav class="navBarWrap">
+            <div class="navBar">
+                <a class="navbarLogo" href="../../index.html">
+                    <img width="175" height="29" src="../../siteContent/homeimg/logo.svg" alt="" />
+                </a>
+                <ul class="navbarLinks">
+                    <li class="navLink"><a href="../../index.html">Home</a></li>
+                    <li class="navLink dropdownBtn">
+                        <a href="#">Products <div id="carret" style="display: inline-block; margin-left:7px;"><i class="fas fa-caret-down"></i></div></a>
+                        <div class="zikDropdown">
+                            <a href="../../Home/EbayMarketResearch.html">eBay Market Research</a>
+                            <a href="../../Home/AliExpressMarketResearch.html">Ali Express Market Research</a>
+                            <a href="../../Home/zikProTools.html">ZIK Pro Tools</a>
+                            <a href="../../Home/Wholesale.html">Wholesale Supplier Database</a>
+                            <a href="https://zikfunnel.com/">ZIK Funnel</a>
+                        </div>
+                    </li>
+                    <li class="navLink dropdownBtn">
+                        <a href="../../Resources.html">Resources  <div class="carret" style="display: inline-block; margin-left:7px;"><i class="fas fa-caret-down"></i></div></a>
+                        <div class="zikDropdown">
+                            <a href="../../Resourcesc6a0.html?id=articles" target="_blank">Articles</a>
+                            <a href="../../Resources627b.html?id=guides" target="_blank">Guides</a>
+                            <a href="../../Resourcesef68.html?id=webinars" target="_blank">Webinars</a>
+                            <a href="../../Resourcesa42d.html?id=liveevents" target="_blank">Live Events</a>
+                        </div>
+                    </li>
+                    <li class="navLink"><a href="../index.html">Blog</a></li>
+                    <li class="navLink"><a href="../../Home/Pricing/index.html">Pricing</a></li>
+                    <li class="navLink"><a class="loginLink" href="../../User/Login.html">Login</a></li>
+                    <li class="navLink" style="margin: 0;"><a class="registerLink" href="../../Plans.html">Get Started</a></li>
+                </ul>
+                <div class="menuToggle">
+                    <div class="menuOpen">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 22px;" fill="#012c41;">
+                            <path d="M491.318 235.318H20.682C9.26 235.318 0 244.577 0 256s9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.259 20.682-20.682 0-11.422-9.259-20.682-20.682-20.682zM491.318 78.439H20.682C9.26 78.439 0 87.699 0 99.121c0 11.422 9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.26 20.682-20.682 0-11.422-9.259-20.682-20.682-20.682zM491.318 392.197H20.682C9.26 392.197 0 401.456 0 412.879s9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.259 20.682-20.682s-9.259-20.682-20.682-20.682z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="clear"></div>
+        <div class="categoryHorizontal" style="border-top: 1px solid #eee;">
+            <ul>
+                        <li><a href="../Category/Shopify.html">Shopify</a></li>
+                        <li><a href="../Category/eCommerce.html">eCommerce</a></li>
+                        <li><a href="../Category/Success%20stories-2.html">Success stories</a></li>
+                        <li><a href="../Category/eBay.html">eBay</a></li>
+                        <li><a href="../Category/Product%20research.html">Product research</a></li>
+                        <li><a href="../Category/Wholesale.html">Wholesale</a></li>
+                        <li><a href="../Category/Dropshipping.html">Dropshipping</a></li>
+            </ul>
+        </div>
+            <div id="postsContentWrapper">
+                <div class="postsContainer">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-12">
+                            <div class="postsContainer singlePostC">
+                                <div class="singlePostTitle">
+                                    <h1>All There Is To Know About KalDrop –A Non API eBay Lister</h1>
+                                </div>
+                                <div class="singlePostInfo">
+                                    <div class="singlePostAuthor">
+                                    <img width="25" height="25" src="../../images/BlogAuthors/blogauthor416eed5f-cdbb-4edd-9c84-4d5a1220c488.jpg" alt="" /> <p>Nahar Geva</p></div>
+                                    <div class="singlePostDate">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <p>29 Jul 2021</p>
+                                    </div>
+                                </div>
+                                <div class="singlePostMainImg">
+                                    <img width="698" height="345" src="../../BlogPhotos/2048%d1%851012(3).pngbcc02e8b-3977-4f8b-a5f2-cd78da2527e7.jpg" alt="" />
+                                </div>
+                                <div class="singlePostDescription">
+                                    <h1 dir="ltr">INTRODUCTION</h1>
+
+<p dir="ltr">Dropshipping, as we all know, is a business model that involves three parties &ndash; the supplier, the dropshipper, and the buyer &ndash; in chronological order. This three-component illustration of dropshipping does not exactly do justice to the entirety of the business model because the main heart of the dropshipping business is in the online retail store (eBay in this case) where the buyer relates with the dropshipper.&nbsp; Hence, to become a successful dropshipper, all your attention must be focused on the appearance and efficiency of your eBay listings.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">This is where an <a href="https://www.kaldrop.com/" target="_blank">eBay lister</a> comes into play. In its simplest terms, an eBay lister is a tool that helps you automate the dropshipping processes that involve listing products on your eBay store. These processes could range from listing products from a third-party e-commerce website like AliExpress (but at a much faster rate than it would if you were to do it by yourself) to listing bulk items to editing the descriptions of these items on your listings, and so on.&nbsp;&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">There are several eBay listers out there, but why KalDrop? Is it because it is a Non API lister? Or because of its amazing features like unlimited listings, VeRO protection, variations support, and so on? Or perhaps because it integrates so well with tools like Zik Analytics and other software you would want to integrate with an eBay lister depending on your strategy?&nbsp;&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">See, we can go on and on about the positives of having and using this tool for your dropshipping &ndash; and we will, in this expository article. So, kick back, relax, and keep reading to find out why KalDrop is the one tool every dropshipper must have.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<h1 dir="ltr">WHAT IS KALDROP?</h1>
+
+<p dir="ltr">KalDrop is a Non API eBay lister that integrates with your chrome browser to help you upload any item of your choice from a third-party e-commerce platform and list it on your eBay seller account. It also gives you the flexibility to edit, remove, and add to the details of the item before you finally list it to your eBay account. As a result, dropshippers can add their selling or shipping policy unique only to their brand and store.&nbsp;</p>
+
+<p dir="ltr">Recall we said KalDrop is a Non API software. This is a very important piece of information because, unlike the API software, KalDrop protects you from getting flagged by eBay. If you are a dropshipper, you must have heard of the term &ldquo;flagging&rdquo; before. It happens when a form of restriction is placed on your account by eBay to reduce your visibility to customers which in turn limits your sales on their platform. It is clearly stated in their API license policy section 9.7 as seen below.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh4.googleusercontent.com/EwuLlIDvcvXsglzc3m1h4PJ3ji4RS36ET5OG0ameNVvMKnTyRubSSLIOe7cq9aFATmdmvmfO2MUrs22zeKjuVozGJO31_qKvqz2URqceeYtSJS9hDi1o-qPRtSma-I-twSFWErY" style="height:94px; width:624px" /></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">Once you use a form of automation on your store, eBay will flag you, making you work harder to get customers and make a sale. This is eBay&rsquo;s way of punishing dropshipper that automate their stores using API software.&nbsp;</p>
+
+<p dir="ltr">The good thing about KalDrop is that you will not face this so-called &ldquo;punishment&rdquo; from eBay because by being a Non API software, it does not connect directly to your eBay store to automate your listing processes. Instead, it utilizes data from your chrome browser to automate your listings. So, you never have to worry about getting flagged.</p>
+
+<p>&nbsp;</p>
+
+<h1 dir="ltr">KALDROP&rsquo;S FEATURES: WHY USE KALDROP?</h1>
+
+<p dir="ltr">Having established the fact surrounding KalDrop&rsquo;s mode of operation, the next question one would likely ask is &ndash; what makes KalDrop so special? Well, besides the fact that it is a Non API lister that will not get you flagged, we can think of 11 other reasons.</p>
+
+<ol>
+	<li dir="ltr">
+	<h2 dir="ltr">Unlimited Listings&nbsp;</h2>
+	</li>
+</ol>
+
+<p dir="ltr">The joy of every dropshipper is to be able to list as many items as they want without restrictions on the quantity, because in this business, the more products you have on your seller account, the more customers you can reach. KalDrop believes in flexibility and freedom, and as such, you can use this tool to list as many products as you want &ndash; no restrictions or limits. With KalDrop, the sky is the limit.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ol start="2">
+	<li dir="ltr">
+	<h2 dir="ltr">Multiple Accounts</h2>
+	</li>
+</ol>
+
+<p dir="ltr">Standing on the existing fact that KalDrop believes in flexibility and freedom, you can use this tool on as many devices as you like, and on as many eBay accounts as you want. This gives you the chance to diversify your portfolio into many different eBay seller accounts without having to subscribe for KalDrop on every single one of those accounts.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ol start="3">
+	<li dir="ltr">
+	<h2 dir="ltr">VeRO Protection</h2>
+	</li>
+</ol>
+
+<p dir="ltr">One thing that pisses eBay off is when a dropshipper lists a VeRO item. Usually, it comes with a warning and a continued upload of VeRO items can lead to an indefinite suspension. The VeRO items on eBay are tens of thousands and you can&rsquo;t exactly start reading the list when you want to list an item to make sure it is not a VeRO item. With KalDrops&rsquo;s database of 40,000+ VeRO items, you can rest assured you will be safe from VeRO violations at all times.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ol start="4">
+	<li dir="ltr">
+	<h2 dir="ltr">Variations Support</h2>
+	</li>
+</ol>
+
+<p dir="ltr">Some products have a lot of variations. It is most common in the fashion product category where you can have a dress with 5 different colors, patterns, or designs. With KalDrop&rsquo;s variations support feature, you can list these items and their variations all in one single, professional listing.</p>
+
+<p>&nbsp;</p>
+
+<ol start="5">
+	<li dir="ltr">
+	<h2 dir="ltr">Unique Templates</h2>
+	</li>
+</ol>
+
+<p dir="ltr">Speaking about listings looking professional, you get a variety of unique templates you can use to upload your listings. These templates are preset and integrated with KalDrop, so you can choose your preference and customize your listings to your choice.</p>
+
+<p>&nbsp;</p>
+
+<ol start="6">
+	<li dir="ltr">
+	<h2 dir="ltr">Bulk Listing</h2>
+	</li>
+</ol>
+
+<p dir="ltr">Shopping carts are very useful in supermarkets when you have a list of things to buy. You simply pick the items from the shelf, drop them in the cart, and check them out at the cashier&#39;s pint. KalDrop has a form of &ldquo;shopping cart&rdquo; where you can pick as many items as you want on AliExpress, DHgate, CJdropshipping, etc., sort them in your bulk list, and upload them to your eBay seller account all at once.</p>
+
+<p>&nbsp;</p>
+
+<ol start="7">
+	<li dir="ltr">
+	<h2 dir="ltr">Easy Product Management</h2>
+	</li>
+</ol>
+
+<p dir="ltr">KalDrop gives you that control over all the products you list on your eBay store. At any point in time, you can delete items, add new items, edit the listing layout, edit the description, change the pictures, and so much more. With KalDrop, you have full control over everything that goes on in your store, product-wise.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ol start="8">
+	<li dir="ltr">
+	<h2 dir="ltr">Semi Automated Orders</h2>
+	</li>
+</ol>
+
+<p dir="ltr">In a single order fulfillment process, that is from the very moment you listed the product to your store to the time the buyer purchases it, and lastly, when the product is being shipped, you spend an average of 5 &ndash; 10 minutes copying the buyer&rsquo;s details from the &ldquo;awaiting shipment area&rdquo; of your store to the supplier that fulfills the order. Doing this for 5 to 10 products a day is a lot of time you cannot afford to be wasting on something that meager. KalDrop helps you copy and paste all the details of your customer from your store to the supplier in just two clicks &ndash; copy, paste.</p>
+
+<p>&nbsp;</p>
+
+<ol start="9">
+	<li dir="ltr">
+	<h2 dir="ltr">Fixed Item Specifics</h2>
+	</li>
+</ol>
+
+<p dir="ltr">Fixed item specifics refer to the additional things you want to appear in the products you list on your store. Take for example it is a special holiday and you want to reward your customers with free shipping on your products. You can simply use the fixed item specifics option on KalDrop to add the words &ldquo;FREE SHIPPING&rdquo;. What you will notice is that on every one of the items you now list, the words &ldquo;FREE SHIPPING&rdquo; will appear as additional info. You can change this anytime you want to whatever you want.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ol start="10">
+	<li dir="ltr">
+	<h2 dir="ltr">Ready Messages</h2>
+	</li>
+</ol>
+
+<p dir="ltr">The importance of communication in business cannot be understated. At any given point in time, you need to communicate with your customers to let them know the situation of things during, and even after, the delivery process. Be it to let them know their item is on the way or to thank them for shopping with you, you can agree that a good message can go a long way to improve the shopping experience of your customers. KalDrop has 25+ message templates addressing every possible situation you will encounter as a dropshipper. And the good thing is that these messages are ready to use. All you need to do is to copy the message and paste it to your customers.</p>
+
+<p>&nbsp;</p>
+
+<ol start="11">
+	<li dir="ltr">
+	<h2 dir="ltr">Title Builder</h2>
+	</li>
+</ol>
+
+<p dir="ltr">To outrank your competitors on eBay, you need to optimize the titles of your listings. The founders and developers of KalDrop are privy to this situation and decided to add a tool within KalDrop called the Title Builder. This tool helps you generate ranking keywords that relate to the item you are selling. Simply click on &ldquo;Title Builder&rdquo; within the chrome extension and you will be redirected to the Fire Title Builder website where you can generate your keywords.</p>
+
+<p>&nbsp;</p>
+
+<ol start="12">
+	<li dir="ltr">
+	<h2 dir="ltr">Live Chat Support</h2>
+	</li>
+</ol>
+
+<p dir="ltr">KalDrop also has a live chat support feature for when you have problems you need to be addressed as soon as possible. This live chat is available 24/6 and has the answers to all of your questions regarding the use of KalDrop.&nbsp;</p>
+
+<p dir="ltr">Speaking about the use of KalDrop, you need to know how this 1 click lister can be used to list, add fixed items specifics, and assist you in performing relatable dropshipping activities. This brings us to the next section of this article.</p>
+
+<p>&nbsp;</p>
+
+<h1 dir="ltr">USING KALDROP: HOW TOs</h1>
+
+<p dir="ltr">Using KalDrop is as easy as eating pie &ndash; it requires few muscles to execute and it is deliciously rewarding. With just a few clicks, you can list as many products as you want without worrying about getting flagged. Sometimes, it is as easy as clicking once &ndash; it is called a 1 click lister for a good reason.&nbsp;</p>
+
+<h2 dir="ltr">HOW TO LIST PRODUCTS</h2>
+
+<p dir="ltr">Listing products on KalDrop follow three easy steps:</p>
+
+<ol>
+	<li dir="ltr">
+	<p dir="ltr">Find a product on a third-party supplier platform</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Click the KalDrop Icon to upload the item to your eBay seller account</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Edit the item&rsquo;s specifications, descriptions, and general layout of the listing.</p>
+	</li>
+</ol>
+
+<p dir="ltr">To find a product to upload, simply go to a good third-party e-commerce website, after you have done your market research of course. The point of market research is to direct you to trendy products that have small shelf lives. The shelf life of an item is the number of days it spends in your store before it sells.&nbsp;</p>
+
+<p dir="ltr">Trendy, hot-selling products sell relatively fast without staying too long in your eBay store. A terrible product will have a longer shelf life meaning it will take a lot longer before they sell. These items wind up taking up space in your seller account and this is especially a big deal if you are a newcomer on eBay with a small seller limit. In summary, thorough market research is needed before choosing a product to sell.</p>
+
+<p dir="ltr">After you have chosen the item you want to upload, simply go to the KalDrop icon that will automatically appear on the top right corner of your screen when you are on a supported third-party website like AliExpress, DHgate, CJdropshipping, Banggood, and so on.&nbsp; The KalDrop icon is a distinct yellow icon and once you click on it, it will give you the option to list the item on your eBay store.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh6.googleusercontent.com/HKRRzwu2fy2cVb7QCEBwE3gbY7p3ad-z53F2t9S7PO7KoT85Sne8FSJaQ4U8FFH2wGNHzWJ4fgV3ykj_DG3y_ePxY6bVTI9SJMKDQ6AzM38-ygOLolGCHIIJGpRiegBW8vWFYXI" style="height:308px; width:624px" /></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">Once you do that, you just have to wait for a few seconds and the item will be listed in your store.&nbsp;</p>
+
+<p dir="ltr">Before the final process of uploading, you will be prompted to go over the details of the product. So, if you want to change anything, maybe remove a few pictures, add a few descriptions, etc., you can do all that before you finally click upload.</p>
+
+<p dir="ltr">You can also choose a template from the multitude of listing templates available on KalDrop. These templates arrange the layout of your listings depending on the design of the template. Also, some of these templates are designed such that you can use them during specific times. The &ldquo;Merry Christmas&rdquo; template, for example, is suitable for the yuletide season. Switching up these templates at appropriate times can personalize the customer&rsquo;s shopping experience with your store, giving them an encounter they will not easily forget.</p>
+
+<p dir="ltr">To change the templates of your listings simply go to &ldquo;settings&rdquo; on the KalDrop chrome extension and pick the template of your choice.&nbsp;&nbsp;</p>
+
+<p dir="ltr">Before all this, you must have signed up to KalDrop with your username, email, and preferred password.</p>
+
+<p>&nbsp;</p>
+
+<h2 dir="ltr">HOW TO EDIT LISTINGS BEFORE UPLOAD</h2>
+
+<p dir="ltr">As a Non API eBay lister, KalDrop copies all the information about an item on your supplier&rsquo;s website and uploads them for you on your own eBay account. But before you finally upload the item to your seller account, KalDrop allows you to edit the information that will appear on the listing.&nbsp;</p>
+
+<p dir="ltr">The first thing you need to do is to choose the item you want to upload. Next, click the KalDrop icon on the top right corner but instead of clicking on the KalDrop logo that lists the item straight up, click the pencil icon.&nbsp; An interface will pop up allowing you to make the necessary edits on the listings before you upload them.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh4.googleusercontent.com/Fs2WnomCq1swYaZsyFe9TGur1IhHJrUgolihOkfD1KJEEUZSCxAje9gg-lJ-pYaWqIAyv9QwYi6a3mlU3kE-V_odg7_Os-3WCtoRer5ohh_9jDxhrn-2h_XJ612g2EHnM3BLDYc" style="height:305px; width:624px" /></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">You can edit the item&#39;s specification, delete some information, add some, remove or add pictures, and so on. When you have edited the listing to your satisfaction, you can then click the KalDrop logo on the icon. This action uploads your items exactly as you edited them.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2 dir="ltr">HOW TO LIST IN BULK</h2>
+
+<p dir="ltr">Listing in bulk on KalDrop is an equally easy task. Just as you would normally upload items (as explained above) all you need to do is to pick the items you want to list from your supplier then click upload. How you do that is by clicking the bulk list button on the KalDrop icon.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh6.googleusercontent.com/4zjQcUMGp53r_nMcPLMBYGmJ1MK1MEmmP34akmFOJ_Nd71Gy6jbbWSSmKV0OLe4qc-CNbJa2AjWNkBYFQKqEBQhvtoSOuVl-hFuajzINagk1LgsSbkg8rqjMv7UP5YK0C7huRL8" style="height:309px; width:624px" /></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">Once you do that, you will be notified that your item has been successfully added to your bull list. You will now go to the KalDrop chrome extension on your browser and click &ldquo;Bulk&rdquo;. You will see all the products you have added to your bulk list in this area. You can now decide to list them all by clicking &ldquo;List All&rdquo;. In a few seconds, or minutes depending on the number of items on your bulk list, and all the products will be successfully uploaded.</p>
+
+<p>&nbsp;</p>
+
+<h2 dir="ltr">HOW TO ADD FIXED ITEM SPECIFICS</h2>
+
+<p dir="ltr">Adding fixed items specifics is a way to personalize your listing by adding additional information to your listings. To do that on KalDrop, go to the chrome extension and click &ldquo;Fixed Item Specifics&rdquo;. Then proceed to add any information you would like to appear on your listing.&nbsp;</p>
+
+<p dir="ltr">There is another feature on KalDrop that allows you to copy items specifics from your competitors on eBay. First go to the item of your competitor, scroll down, and you will see the button &ldquo;Copy Item Specifics&rdquo;.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh4.googleusercontent.com/1aPnk1aQbzJLI-317k5wxJECp3SbjippPz3nMjdOwSMrq2o0LakgLDXw5xfKoL29fLmsF8jLzIZngPgY_2fhKVdII_DLQ89kc4zN5-E1z-NxKXVu73Ln0iu_DMO1X3tWpJy4E18" style="height:317px; width:624px" /></p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr">Click on it. Then go to your listing of the same item and click &ldquo;Paste Item Specifics&rdquo;. The information on your competitor&rsquo;s listing will the pasted on yours automatically.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2 dir="ltr">HOW TO AUTOMATE YOUR DROPSHIPPING WITH SEMI-AUTO ORDERING</h2>
+
+<p dir="ltr">KalDrop has made it easier for dropshippers to copy the shipping information of the customer from eBay directly to the supplier of the product they have purchased. This feature is important for two reasons:</p>
+
+<ol>
+	<li dir="ltr">
+	<p dir="ltr">It Saves Time</p>
+	</li>
+</ol>
+
+<p dir="ltr">You can simply copy all the information regarding the shipping details of the customer such as the address, country, zip code, phone number, etc., in just two clicks. This will take a significant amount of time if done manually.</p>
+
+<ol start="2">
+	<li dir="ltr">
+	<p dir="ltr">It Protects You From Human Errors</p>
+	</li>
+</ol>
+
+<p dir="ltr">It is very easy for you to make mistakes when you are copying all the information of several customers from eBay to the supplier. This Semi-Automated ordering feature lifts the exact shipping information of the customer so you don&rsquo;t have to worry about errors.</p>
+
+<p dir="ltr">To use this feature, go to your &ldquo;Awaiting shipment&rdquo; under &ldquo;Orders&rdquo; in your dashboard, choose an order from any of your pending orders, click the order number, then click &ldquo;Copy Shipping Information&rdquo;.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh6.googleusercontent.com/V6SyoVfEVTg7zg28g4xw1sVVFsHdEu_M4teVyNp9T0JhaCy6EO__VdztdI089s3N34zUNGng3bG7wKV6lr3OkZAAwKnpVQWFsiwvMUYQkDfKZS7fRpwfmSUVqrdLwh0u7Hn08OA" style="height:298px; width:624px" /></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">By doing this all the information of your customer has been automatically copied.&nbsp;</p>
+
+<p dir="ltr">Next, what you are going to do is to fulfill the customer&rsquo;s order by buying the exact product of their choice from your supplier and adding their shipping details by clicking &ldquo;Paste Shipping Information&rdquo; at the checkout point.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h2 dir="ltr">HOW TO AVOID VERO VIOLATIONS</h2>
+
+<p dir="ltr">KalDrop protects you from listing VeRO items by alerting you on the status of the item even before you list it. Giving you solid protection from any form of violation. KalDrop indicates the status of an item with color codes. The KalDrop has three distinct color codes &ndash; orange, green, and red.</p>
+
+<p dir="ltr">Orange means you have already listed the item so there isn&rsquo;t any need to list it again. Unless if you want to of course.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh4.googleusercontent.com/DVDSAQuc3_vBA9VCO43Rs4GekyZ7hUdSMeVbQWCCoDS5T1TPjkKiEKhzH_rvSCXpt3YfQ8t3UHwU_6qOsQc20_CrqZzhKuJZTC8UA6WTsSYauVaIneSMvVvm48HbOx4rncr380g" style="height:323px; width:624px" /></p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr">Green means you haven&rsquo;t listed the item and it is all good to go &ndash; that is it is not a VeRO item.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh5.googleusercontent.com/YlpH7iQSn-ccGzQHlJfDgfTOAZiAz06pEEXXdODHJxGLYYOLTI_9pMEGQUoaPtzXx1-2bKC1vV5r5bnunV2YeMTbfPQrPQJZLDfsVAmqaSjYJ6A7hWvGWzQ7pU0NRMvHZ-iF9AA" style="height:324px; width:624px" /></p>
+
+<p>&nbsp;</p>
+
+<p dir="ltr">Red, however, means the item is a VeRO item and you should not list such an item.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img alt="" src="https://lh6.googleusercontent.com/-T4jBjK9R-OIUp_SATXA4G4ms8_hk6L55J42VSu__YpLyuSLFnVbdsGELoTLDL4oZIIBzB3Sr9K4elYViHlke1l3I7S7q1acC82LEZemERb6oP8TobLDhpH9kDUom7lHky8KWNc" style="height:327px; width:624px" /></p>
+
+<p><br />
+&nbsp;</p>
+
+<h2 dir="ltr">HOW TO EARN FREE MONEY FROM KALDROP</h2>
+
+<p dir="ltr">Some of you may not know this but you can earn free money from KalDrop on the side through the affiliate program. This program is put together to reward dropshippers within the KalDrop community for their dedication to spreading the word about KalDrop to their peers.&nbsp;</p>
+
+<p dir="ltr">How the KalDrop affiliate program works is simple. Like most affiliate programs, you make passive money by bringing people to KalDrop who follow through on your unique link given to you when you register for the affiliate program. Once they register through your link and they pay for KalDrop&rsquo;s services, you will be awarded a percentage (15%) on their payment. You get this payment straight to your PayPal account after a month. As they keep paying, you keep getting your percentage paid every month for life.</p>
+
+<p dir="ltr">The KalDrop affiliate is not like other affiliate programs that require a &ldquo;minimum withdrawal limit&rdquo; before you can withdraw your money. Once your affiliates start paying, you start getting paid. As simple as that. If you have 10 affiliate links, 20, or even 5, you will still get paid.</p>
+
+<p dir="ltr">To participate in KalDrop&rsquo;s affiliate program, do the following:</p>
+
+<ol>
+	<li dir="ltr">
+	<p dir="ltr">Click &ldquo;Affiliate&rdquo; on the home page</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Sign up by registering your name, a preferred password, the email you used to open KalDrop, and your PayPal email.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Copy your unique affiliate link from your dashboard and share it for people to register through your link.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">If you like, you can create a coupon on your dashboard to motivate people to sign up for KalDrop.&nbsp;</p>
+	</li>
+</ol>
+
+<p dir="ltr">And that&rsquo;s it &ndash; you have successfully joined the KalDrop affiliate program and you can start earning free money on the side!</p>
+
+<p>&nbsp;</p>
+
+<h1 dir="ltr">FINAL THOUGHTS</h1>
+
+<p dir="ltr">As you can see, KalDrop is a well-rounded tool every dropshipper must have. The developers had the dropshipper in mind when they were creating the software.&nbsp;</p>
+
+<p dir="ltr">Each feature is deliberately added to greatly improve the experience of the dropshipper and their respective customers. In addition, it integrates well with Zik Analytics. You can perform your market research with Zik and if you are convinced the product will sell, you can easily upload it via KalDrop.</p>
+
+                                </div>
+                            </div>
+
+                            <div class="postCommentsWrapper">
+                                <div class="postCommentContainer">
+                                    <form>
+                                        <div class="commentInfoInputs">
+                                            <input id="firstName" type="text" placeholder="First Name" required="required" />
+                                            <input id="lastName" type="text" placeholder="Last Name" required="required" />
+                                            <input id="emailAdd" type="email" placeholder="Email@domain.com" required="required" />
+                                        </div>
+                                        <div class="commentRequiredFields" style="display: none;">
+                                            All fields are required.
+                                        </div>
+                                        <textarea id="newCommentPost" class="newCommentPost" maxlength="500" placeholder="Write a comment"></textarea>
+                                        <div class="b_W">
+                                            <button id="postCommentBtn">Comment</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                                <div class="displayCommentsWrapper" style="display: none;">
+                                    <div class="displayCommentsContainer">
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                        </div>
+
+                        <div id="blogAside" class="col-md-4">
+                                <p style="max-width: 325px;margin: 0 auto 15px auto;font-family: mtsSemiBold;font-size: 18px;line-height: 1.2;color: #012c41;">Here's exactly how to find Hot eBay Niches</p>
+                                <div class="sideBarForm" style="margin-bottom: 15px; position: relative; top: 0;">
+                                    <img src="../../siteContent/frontpage/img/hottestBook.png" style="width: 100%;border-radius: 12px;max-width: 110px;margin-right: 12px;" />
+                                    <div class="getguideform" style="flex-direction: column; margin:10px 0 !important;">
+                                        <input type="text" name="name" class="bSubName" placeholder="Name" style="height: 40px;border-radius: 5px;border: 1px solid #ccc;padding: 0 10px;margin-bottom: 5px;">
+                                        <input type="text" name="email" class="bSubEmail" data-contactlist="f9f8126f-14a4-4db0-b4b9-db8e100974f4" placeholder="Email Address" style="height: 40px;border-radius: 5px;border: 1px solid #ccc;padding: 0 10px;margin-bottom: 5px;">
+                                        <a href="#" class="start-now-btnv2 blogSubBtn" style="height: 40px;display: flex;justify-content: center;align-items: center;border-radius: 5px;">Download my guide</a>
+                                    </div>
+                                </div>
+                                <p style="font-size: 12px;margin: 0 auto;max-width: 325px;">By entering your email, you'll be subscribed to ZIK Analytics newsletter. You can unsubscribe any time.</p>
+
+                            <div class="popularPosts">
+                                <h3>Recent Posts: </h3>
+                                <div class="popularList">
+                                            <a class="popularListItem" href="ebay-seo-guide-to-rank-on-ebay.html">
+                                                <img src="../../BlogPhotos/eBay%20SEO%20Guide%20-%20rank%20higher%20on%20eBay37e6e658-9de9-4cdc-a857-16f7b16c997e.jpg" />
+                                                <p>
+                                                    eBay SEO: A Step-By-Step Guide to Ranking on eBay
+                                                    <span>23 Oct 2021</span>
+                                                </p>
+                                            </a>
+                                            <a class="popularListItem" href="5-ebay-promoted-listing-tips-for-success.html">
+                                                <img src="../../BlogPhotos/eBay_Promoted_Listing_Tipc4b9a509-1ba4-46c2-b16a-9bd9cc18e085.png" />
+                                                <p>
+                                                    5 insider tips to get the most out of eBay Promoted Listings
+                                                    <span>13 Oct 2021</span>
+                                                </p>
+                                            </a>
+                                            <a class="popularListItem" href="185k-dropshipping-sales-with-pricebackers.html">
+                                                <img src="../../BlogPhotos/Make%20more%20profit%20dropshipping%20on%20ebay%20with%20pricebackers502b68e5-5f5c-43a0-9112-14daf32bae8e.png" />
+                                                <p>
+                                                    How Omer Got to $185K Sales In His Dropshipping Store Using ZIK Analytics &amp; PriceBackers
+                                                    <span>12 Oct 2021</span>
+                                                </p>
+                                            </a>
+                                            <a class="popularListItem" href="the-ultimate-ebay-stealth-account-guide.html">
+                                                <img src="../../BlogPhotos/eBay-Stealth-Account-Guide3ee971bf-248a-4c01-beb1-3a735b2ae0fc.jpg" />
+                                                <p>
+                                                    The Ultimate eBay Stealth Account Guide for 2021
+                                                    <span>05 Oct 2021</span>
+                                                </p>
+                                            </a>
+                                            <a class="popularListItem" href="6-tips-to-increase-your-ebay-seller-rating-quickly.html">
+                                                <img src="../../BlogPhotos/eBay_top_rated_seller_guideb61f7d78-a424-4cb3-a956-2cb670630286.jpg" />
+                                                <p>
+                                                    6 Tips to Increase your eBay Seller Rating Quickly
+                                                    <span>28 Sep 2021</span>
+                                                </p>
+                                            </a>
+                                </div>
+                            </div>
+                            <div id="blogSidebarWrap" style="margin-bottom: 40px; position: sticky; top: 40px;">
+                                <div class="sideBarForm" style="margin-bottom: 40px; position: relative; top: 0; display: block;">
+                                    <img src="../../siteContent/frontpage/img/104Niches.png" style="width: 100%;border-radius: 12px;border: 1px solid #ccc;margin-right: 12px;" />
+                                    <div class="getguideform" style="flex-direction: column; margin: 10px 0 !important;">
+                                        <input type="text" name="email" class="bSubEmail" data-contactlist="f9f8126f-14a4-4db0-b4b9-db8e100974f4" placeholder="Email Address" style="height: 50px;border-radius: 5px;border: 1px solid #ccc;padding: 0 10px;margin-bottom: 5px;">
+                                        <a href="#" class="start-now-btnv2 blogSubBtn" style="height: 50px;display: flex;justify-content: center;align-items: center;border-radius: 5px;">Download my guide</a>
+                                    </div>
+                                </div>
+
+
+                                <div class="blogBannerZik">
+                                    
+                                    <img src="../../images/bannerlaptop.png" />
+                                    <h2>build your own eBay<br /> business</h2>
+                                    <div class="blogBannerButtons">
+                                        <a class="bannerButton" target="_blank" href="https://zikanalytics.com/Registration">
+                                            Get Started
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        <div class="footer" style="border-top: 1px solid #eee;">
+            <div class="footerWrap">
+                <div class="footerL">
+                    <p>
+                        ZIK Analytics<br />
+                        N.G.C.A Technology Enterprises LTD<br />
+                        1 Arpiliou, 8 Aristo Centre, Block B, Floor B, Office 204<br />
+                        8011 Paphos, Cyprus<br />
+                        <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="95e6e0e5e5fae7e1d5effcfef4fbf4f9ece1fcf6e6bbf6faf8">[email&#160;protected]</a>
+                    </p>
+                </div>
+                <div class="footerR">
+
+                    <a href="../../Home/tos.html">Terms of Service</a>
+                    <a href="../../Home/PrivacyPolicy.html">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="socialWrap">
+            <div class="socialContainer">
+                <ul>
+                    <li><a class="socialLink" href="https://www.facebook.com/ZIKAnalaytics/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a class="socialLink" href="https://www.instagram.com/zikanalytics/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a class="socialLink" href="https://www.linkedin.com/company/zik-analytics" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a class="socialLink" href="https://twitter.com/ZIKAnalytics" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+            var APP_ID = "k4f6o3vw";
+
+            window.intercomSettings = {
+                app_id: APP_ID
+            };
+        </script>
+
+    <script>
+
+        (function () {
+
+            var w = window;
+
+            var ic = w.Intercom;
+
+            if (typeof ic === "function") {
+
+                ic('reattach_activator');
+
+                ic('update', w.intercomSettings);
+
+            } else {
+
+                var d = document;
+
+                var i = function () {
+
+                    i.c(arguments);
+
+                };
+
+                i.q = [];
+
+                i.c = function (args) {
+
+                    i.q.push(args);
+
+                };
+
+                w.Intercom = i;
+
+                var l = function () {
+
+                    setTimeout(function () {
+
+                        var s = d.createElement('script');
+
+                        s.type = 'text/javascript';
+
+                        s.async = true;
+
+                        s.src = 'https://widget.intercom.io/widget/APPID';
+
+                        var x = d.getElementsByTagName('script')[0];
+
+                        x.parentNode.insertBefore(s, x);
+
+                    }, 5000);
+
+                };
+
+                if (w.attachEvent) {
+
+                    w.attachEvent('onload', l);
+
+                } else {
+
+                    w.addEventListener('load', l, false);
+
+                }
+
+            }
+
+        })();
+
+    </script>
+
+    <script type="text/javascript" src="../../siteContent/frontpage/js/home.js"></script>
+    
+    <!-- Start of StatCounter Code for Dreamweaver -->
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/af2821b0/cloudflare-static/email-decode.min.js"></script>
+    
+    <!-- End of StatCounter Code for Dreamweaver -->
+</body>
+
+<!-- Mirrored from www.zikanalytics.com/blog/post/kaldrop-a-non-api-ebay-lister by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Oct 2021 07:38:44 GMT -->
+</html>
+
+<script>
+
+    $(document).ready(function () {
+        
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+       
+        $('body').css({ 'padding-top': '0px' });
+
+        $('.singlePostDescription *').removeAttr('style dir');
+
+        $('.dropdownBtn').mouseenter(function () {
+            $(this).children('.zikDropdown').addClass('dpActive');
+            $(this).children("a").find('.carret').html('<i class="fas fa-caret-up"></i>');
+
+            $(this).siblings(".dropdownBtn").children(".zikDropdown").removeClass("dpActive");
+            $(this).siblings(".dropdownBtn").children("a").find('.carret').html('<i class="fas fa-caret-down"></i>');
+        });
+
+        $('.navBarWrap,.zikDropdown').mouseleave(function () {
+            $(".zikDropdown ").removeClass("dpActive");
+            $('.carret').html('<i class="fas fa-caret-down"></i>');
+        });
+
+
+        $('.zikDropdown a').click(function (e) {
+            e.stopPropagation();
+        });
+
+        $(document).on("click", "#postCommentBtn", function (event) {
+            event.preventDefault();
+            var Id = 'kaldrop-a-non-api-ebay-lister';
+            $.post("/Blog/AddComment", {
+                FirstName: $("#firstName").val(),
+                LastName: $("#lastName").val(),
+                Email: $("#emailAdd").val(),
+                Comment: $("#newCommentPost").val(),
+                PostId: Id
+            }).done(function (data) {
+
+                if (data == "commRequired") {
+                    $('.commentRequiredFields').fadeIn("slow").delay(2000).fadeOut("slow");
+                }
+
+                if (data.status == "Ok") {
+                    $('.displayCommentsWrapper').show();
+                    $('.displayCommentsContainer').prepend('<div class="commentBlock"><div class="approvalMark">Waiting for approval</div><div class="userCommentInfo"><div class="userComment"><img src="../../images/userComment.svg"/><p>' + data.newFName + '  ' + data.newLName + '</p></div><div class="dateComment"><i class="fas fa-calendar-alt"></i><p>' + data.newDate + '</p></div></div><div class="commentContent"><p>' + data.newComment + '</p></div></div>');
+                }
+
+            });
+        });
+        $('.menuOpen').click(function () {
+            $('#smMenu').addClass('menuOpened');
+            $('.menuClose').show();
+        });
+
+        $('.menuClose').click(function () {
+            $('#smMenu').removeClass('menuOpened');
+            $('.menuOpen').show();
+        });
+
+
+
+
+        $('.blogSubBtn').click(function (e) {
+            e.preventDefault();
+            var name = $(this).siblings('.bSubName').val();
+            var thisInp = $(this).siblings('.bSubEmail').val();
+            var clid = $(this).siblings('.bSubEmail').data('contactlist');
+            if (thisInp != "") {
+                $.post("/Blog/AddUser", {
+                    Email: thisInp,
+                    FirstName: name,
+                    contactList: clid
+                }).done(function (data) {
+                    $('.guideSubMessage').addClass('activeMessage');
+                    setTimeout(function () {
+                        $('.guideSubMessage').removeClass('activeMessage');
+                    }, 4500);
+                });
+            }
+
+        });
+        
+    });
+</script>
+
+

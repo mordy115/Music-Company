@@ -1,0 +1,59 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 31 Oct 2021 09:34:49 at https://www.zikanalytics.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar -*https://www.zikanalytics.com/* +*https://www.zikanalytics.com/*
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.zikanalytics.com/ -O1 "C:\My Web Sites\mostaql" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar -*https://www.zikanalytics.com/* +*https://www.zikanalytics.com/* )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+09:35:40	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://www.zikanalytics.com/)
+09:39:24	Warning: 	Link https://www.zikanalytics.com/cdn-cgi/l/email-protection not scanned (follow robots meta tag)
+09:39:30	Warning: 	Retry after error -4 (Connect Error) at link https://code.jquery.com/jquery-3.4.1.min.js (from https://www.zikanalytics.com/resources/aliexpress)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B2136.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B213A.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B213D.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B213E.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B213C.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B213B.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B2135.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B2137.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/3F1B2134.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:39:30	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/homeimg/1EEBCD29.png (from https://www.zikanalytics.com/siteContent/homeimg/mainillu.svg)
+09:40:04	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/images/1.ico (from https://www.zikanalytics.com/affiliate-program)
+09:40:30	Warning: 	Found for https://www.zikanalytics.com/Home/generic-update-card/
+09:40:30	Warning: 	File has moved from https://www.zikanalytics.com/Home/generic-update-card/ to /Error/Error404?aspxerrorpath=/Home/generic-update-card/
+09:40:30	Warning: 	Found for https://www.zikanalytics.com/Home/zuora-hmac/
+09:40:30	Warning: 	File has moved from https://www.zikanalytics.com/Home/zuora-hmac/ to /Error/Error404?aspxerrorpath=/Home/zuora-hmac/
+09:40:30	Warning: 	Found for https://www.zikanalytics.com/Home/quests/customer/
+09:40:30	Warning: 	File has moved from https://www.zikanalytics.com/Home/quests/customer/ to /Error/Error404?aspxerrorpath=/Home/quests/customer/
+09:40:31	Warning: 	Found for https://www.zikanalytics.com/Home/customer/has-notifications/
+09:40:31	Warning: 	File has moved from https://www.zikanalytics.com/Home/customer/has-notifications/ to /Error/Error404?aspxerrorpath=/Home/customer/has-notifications/
+09:40:31	Warning: 	Found for https://www.zikanalytics.com/Home/customer/active-notification/
+09:40:31	Warning: 	File has moved from https://www.zikanalytics.com/Home/customer/active-notification/ to /Error/Error404?aspxerrorpath=/Home/customer/active-notification/
+09:40:31	Warning: 	Found for https://www.zikanalytics.com/Home/customer/event/
+09:40:31	Warning: 	File has moved from https://www.zikanalytics.com/Home/customer/event/ to /Error/Error404?aspxerrorpath=/Home/customer/event/
+09:40:32	Warning: 	Found for https://www.zikanalytics.com/Home/anonymous/event/
+09:40:32	Warning: 	File has moved from https://www.zikanalytics.com/Home/anonymous/event/ to /Error/Error404?aspxerrorpath=/Home/anonymous/event/
+09:40:32	Warning: 	Found for https://www.zikanalytics.com/Home/quests/demo/
+09:40:32	Warning: 	File has moved from https://www.zikanalytics.com/Home/quests/demo/ to /Error/Error404?aspxerrorpath=/Home/quests/demo/
+09:40:32	Warning: 	Found for https://www.zikanalytics.com/Home/quests/feedback/
+09:40:32	Warning: 	File has moved from https://www.zikanalytics.com/Home/quests/feedback/ to /Error/Error404?aspxerrorpath=/Home/quests/feedback/
+09:40:32	Warning: 	Found for https://www.zikanalytics.com/Home/quests/error/
+09:40:32	Warning: 	File has moved from https://www.zikanalytics.com/Home/quests/error/ to /Error/Error404?aspxerrorpath=/Home/quests/error/
+09:40:33	Warning: 	Found for https://www.zikanalytics.com/Home/create-salvage-offer/
+09:40:33	Warning: 	File has moved from https://www.zikanalytics.com/Home/create-salvage-offer/ to /Error/Error404?aspxerrorpath=/Home/create-salvage-offer/
+09:40:33	Warning: 	Found for https://www.zikanalytics.com/Home/cancellation-flow/create/
+09:40:33	Warning: 	File has moved from https://www.zikanalytics.com/Home/cancellation-flow/create/ to /Error/Error404?aspxerrorpath=/Home/cancellation-flow/create/
+09:40:33	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/constants.js (from https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js)
+09:40:33	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/xhr.js (from https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js)
+09:40:33	Warning: 	Found for https://www.zikanalytics.com/path=/
+09:40:33	Warning: 	File has moved from https://www.zikanalytics.com/path=/ to /Error/Error404?aspxerrorpath=/path=/
+09:40:34	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/lib/widget-management.js (from https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js)
+09:42:10	Warning: 	Retry after error -4 (Connect Error) at link https://code.jquery.com/jquery-3.4.1.min.js (from https://www.zikanalytics.com/resources/aliexpress)
+09:42:31	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/blog/image.axd?picture=/Jose%20Case%20Study%20Blog%20Post/20180807060937762.png (from https://www.zikanalytics.com/Blog/Post/ebay-dropshipping-story)
+09:42:56	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/siteContent/frontpage/img/metaZIK.jpg (from https://www.zikanalytics.com/home/dropshipping-course)
+09:42:57	Error: 	"Connect Error" (-4) after 2 retries at link https://code.jquery.com/jquery-3.4.1.min.js (from https://www.zikanalytics.com/resources/aliexpress)
+09:42:57	Error: 	"Not Found" (404) at link https://www.zikanalytics.com/Content/Registerimg/x.svg (from https://www.zikanalytics.com/siteContent/frontpage/css/global.css?v=11)
+
+HTTrack Website Copier/3.49-2 mirror complete in 8 minutes 8 seconds : 675 links scanned, 640 files written (118047719 bytes overall) [97230312 bytes received at 199242 bytes/sec], 39994308 bytes transferred using HTTP compression in 345 files, ratio 45%, 17.2 requests per connection
+(19 errors, 29 warnings, 0 messages)

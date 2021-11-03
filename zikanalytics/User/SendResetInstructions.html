@@ -1,0 +1,424 @@
+
+
+<!-- Mirrored from www.zikanalytics.com/User/SendResetInstructions by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Oct 2021 07:39:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ZIK Analytics - Reset Password </title>
+
+    <!-- Bootstrap -->
+
+    <link href="../Content/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom Theme Style -->
+    <link rel="stylesheet" type="text/css" href="../Content/vendors/fontawesome5/css/all.css" media="all">
+    <link href="../siteContent/frontpage/css/home7b30.css?v=4" rel="stylesheet">
+    <script src="../Content/vendors/jquery/dist/jquery.js"></script>
+
+</head>
+<script>
+
+
+    $(document).ready(function () {
+        var techIDs = "";
+
+        $('form').submit(function (event) {
+            event.preventDefault();
+
+            if ($(this).validate()) {
+                var formdata = new FormData($(this).get(0));
+
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: formdata,
+                    processData: false,
+                    contentType: false,
+
+                    success: function (result) {
+                        console.log(result);
+                        if (result == "Ok") {
+                            callMessage("An email has been sent to you.");
+                            setTimeout(function () {
+                                window.location.href = "Login.html";
+                            }, 1500);
+                        }
+                        else if (result = "EmailError") {
+                            callMessage("Email is wrong or doesn't exist!", "err");
+                        }
+                        else if (result == "CaptchaError") {
+                            $('.captchaError').show(0).css({'display': 'block'}).delay(2000).fadeOut(400).hide(0);
+                            return;
+                        }
+                    },
+                    failure: function (result) {
+
+                    }
+                });
+            }
+            return false;
+        });
+       /* $('.resetPwdBtn,.saveChanges').click(function () {
+            $.post("/User/DoResetPwd", { Email: $('#txtEmail').val(), password: $('#txtPassword').val(), passwordConfirm: $('#txtPasswordConfirm').val() }, function (data) {
+                if (data == "EmailError") {
+                    ShowErrorMessage("Email is wrong or doesn't exists!");
+                    return;
+                }
+                else if (data == "Ok") {
+                    ShowMessage("An email has been sent to you.");
+                    setTimeout(function () {
+                        window.location.href = "/User/Login";
+                    }, 1500);
+                }
+                else if (data == "PasswordChanged") {
+                    ShowMessage("Your password has been changed.");
+                    setTimeout(function () {
+                        window.location.href = "/User/Login";
+                    }, 1500);
+                }
+                else if (data == "RequestExpired") {
+                    ShowErrorMessage("Request expired.");
+                    return;
+                }
+                else if (data == "FieldsRequired") {
+                    ShowErrorMessage("All fields are required.");
+                    return;
+                }
+                else if (data == "EqualFields") {
+                    ShowErrorMessage("Passwords must be equal.");
+                    return;
+                }
+                else if (data == "CaptchaError") {
+                    ShowErrorMessage("Validation failed.");
+                    return;
+                }
+            })
+        });*/
+
+
+    });
+</script>
+<body>
+    <div class="loginHeader" style="margin-top: 20px;">
+        <a class="navbarLogo" href="../index.html">
+            <img src="../siteContent/homeimg/logo.svg">
+        </a>
+
+    </div>
+
+    <div class="loginWrapper" style="margin-top: 50px;padding: 0 15px 50px 15px;">
+        <div class="logintitle">
+            <h2 class="text-center">Reset Password</h2>
+        </div>
+
+        <div class="loginFlex">
+            <div class="flexLItem">
+                <div class="loginbody">
+                    <div class="loginInner">
+<form action="https://www.zikanalytics.com/User/SendInstructions" method="post">                            <div class="inputBox">
+                                <input class="form-control" data-val="true" data-val-regex="Email is invalid!" data-val-regex-pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" data-val-required="Email is required!" id="Email" name="Email" placeholder="Enter your Email here" style="border:none" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true" style="float:right;"></span>
+                            </div>
+                            <div class="g-recaptcha" data-sitekey="6LcRPBgUAAAAAF4w1Kr2gk0ZNWiWZJgVCsV_n3dv"></div>
+                            <span class="text-danger field-validation-error captchaError">Captcha is required</span>
+                            <div style="margin-top:15px;">
+                                <button type="submit" class="btnregister submit">Send Reset Instructions</button>
+                            </div>
+</form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="socialWrap">
+        <div class="socialContainer">
+            <ul style="justify-content: center;">
+                <li><a class="socialLink" href="https://www.facebook.com/ZIKAnalaytics/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a class="socialLink" href="https://www.instagram.com/zikanalytics/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a class="socialLink" href="https://www.linkedin.com/company/zik-analytics" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a class="socialLink" href="https://twitter.com/ZIKAnalytics" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <div class="designitive-sign">
+            <a href="http://designitive.com/" target="_blank">
+                <p>Developed by</p>
+
+
+                <img src="../Content/logo/designitive.svg">
+                <p>Designitive</p>
+            </a>
+        </div>
+    </div>
+
+    <!--intercom start-->
+    <script>
+        var APP_ID = "k4f6o3vw";
+
+        window.intercomSettings = {
+            app_id: APP_ID
+        };
+    </script>
+
+
+
+    <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/k4f6o3vw'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+
+    <!--intercom ends-->
+    <script src='../../www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript" src="../siteContent/frontpage/js/jquery-3.2.1.min.js"></script>
+    <script src='../siteContent/js/jquery.validate.min.js'></script>
+    <script src='../siteContent/js/jquery.validate.unobtrusive.js'></script>
+    <script src="../Content/build/js/zikmessage.js"></script>
+</body>
+<script src="../Content/vendors/iCheck/icheck.js"></script>
+<div class="modal"><!-- Loading modal popup --></div>
+<style>
+    body {
+        padding: 0;
+    }
+    .loginWrapper {
+        min-height: 70vh;
+        position: relative;
+    }
+    
+
+    .g-recaptcha {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .designitive-sign {
+        max-width: 600px;
+        width: 100%;
+        margin: 20px auto 10px auto;
+        text-align: center;
+        bottom: 0;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    }
+
+        .designitive-sign a {
+            text-decoration: none;
+        }
+
+        .designitive-sign img {
+            display: inline-block;
+            width: 35px;
+            height: auto;
+            filter: grayscale(1);
+            text-decoration: none;
+            transition: all 300ms ease;
+            -webkit-transition: all 300ms ease;
+        }
+
+        .designitive-sign a:hover img {
+            filter: grayscale(0);
+        }
+
+        .designitive-sign p {
+            display: inline-block;
+            margin: 0 5px 7px 5px;
+            color: #666666c4;
+            font-family: mtsRegular;
+            letter-spacing: -0.2px;
+            font-size: 12.8px;
+        }
+
+    .inputBox {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .loginbody {
+        position: relative;
+        background: #fff;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+    }
+
+        .loginbody:before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 15px;
+            background: #012c41;
+            border-radius: 8px 8px 0 0;
+        }
+
+    .logintitle {
+        margin: 40px 0 80px 0;
+    }
+
+        .logintitle h2 {
+            font-family: mtsSemiBold;
+            color: #012c41;
+            text-align: center;
+        }
+
+    .loginbody form {
+        margin: 0 !important;
+    }
+
+    .loginInner {
+        padding: 50px 0 20px 0;
+    }
+
+    .lostpw {
+        margin: auto;
+        display: block;
+        color: #505050;
+        text-align: center;
+    }
+
+    .funnelBannerWrap {
+        width: 100%;
+    }
+
+    .funnelBanner {
+        position: relative;
+    }
+
+        .funnelBanner a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .funnelBanner img {
+            width: 100%;
+            filter: drop-shadow(0 3px 2px rgba(0,0,0, .3));
+            height: 337px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+    .afterloginbody {
+        text-align: center;
+        margin-top: 55px;
+    }
+
+        .afterloginbody p {
+            color: #012c41;
+        }
+
+        .afterloginbody a {
+            margin: 0 10px;
+            border: 1px solid #012c41;
+            background: #012c41;
+            color: #fff;
+            padding: 3px 9px;
+            border-radius: 5px;
+        }
+
+    .btnregister {
+        background: #012c41;
+        border: 1px solid #012c41;
+        color: #fff;
+    }
+
+        .btnregister:hover {
+            color: #012c41;
+            background: #fff;
+        }
+
+    .flexLItem {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .loginbody {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+    }
+
+
+    .field-validation-error {
+        display: block;
+        text-align: center;
+        background: #ff404f;
+        color: #fff !important;
+        border-radius: 3px;
+        padding: 0 8px;
+        position: relative;
+        z-index: 10;
+        margin: auto;
+        max-width: 300px;
+       
+    }
+
+    #confirmLoader {
+        display: none;
+        margin: 30px 0;
+    }
+
+    .captchaError {
+        display: none;
+    }
+    .dotLoader {
+        height: 57px;
+        width: 100%;
+        border-radius: 5px;
+        background: #012c41;
+        border: 1px solid #012c41;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .dotLoader span {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border-radius: 100%;
+            background: #fff;
+            margin: 0 3px;
+            animation: doting 1s linear infinite alternate;
+        }
+
+            .dotLoader span:nth-child(1) {
+                animation-delay: 0.2s;
+            }
+
+            .dotLoader span:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+
+            .dotLoader span:nth-child(3) {
+                animation-delay: 0.8s;
+            }
+
+    @keyframes doting {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 991px) {
+        .flexLItem {
+            width: 100%;
+        }
+    }
+</style>
+
+
